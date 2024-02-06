@@ -28,7 +28,8 @@ env:
 jobs:
   Build:
     runs-on: ubuntu-22.04
-  steps:
+
+    steps:
     - name: Check Server Performance
       run: |
         echo "警告⚠"
