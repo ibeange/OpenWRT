@@ -148,6 +148,8 @@ jobs:
 
     - name: Compile Firmware
       id: compile
+      env:
+          CGO_ENABLED: 1
       run: |
         cd $OPENWRT_PATH
         mkdir -p files/etc/uci-defaults
