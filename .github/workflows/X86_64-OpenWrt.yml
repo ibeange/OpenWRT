@@ -109,10 +109,21 @@ jobs:
         mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
 
+    - name: Update feeds
+      run: |
+        cd $OPENWRT_PATH
+        ./scripts/feeds clean
+        ./scripts/feeds update -a
+
+    - name: Custom operations
+      run: |
+        cd $OPENWRT_PATH
+        rm -rf feeds/packages/lang/golang
+        git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
+
     - name: Install Feeds
       run: |
         cd $OPENWRT_PATH
-        ./scripts/feeds update -a
         ./scripts/feeds install -a
 
     - name: Load Custom Configuration
