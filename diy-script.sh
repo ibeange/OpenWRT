@@ -89,7 +89,11 @@ git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
 # git clone --depth=1 https://github.com/ximiTech/msd_lite package/msd_lite
 
 # MosDNS
-git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
+# git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
+
+rm -rf feeds/packages/net/v2ray-geodata
+git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone --depth=1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # Alist
 git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
