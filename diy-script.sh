@@ -21,6 +21,8 @@ rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/utils/v2dat
 rm -rf feeds/packages/v2dat
 rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/package/luci-app-ssr-plus/mosdns
+
 rm -rf feeds/packages/net/{alist,adguardhome,mosdns,smartdns}
 rm -rf feeds/smpackage/luci-app-adguardhome
 rm -rf feeds/packages/net/msd_lite
@@ -32,6 +34,7 @@ rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-unblockmusic
 rm -rf feeds/luci/applications/luci-app-adbyby-plus
+rm -rf feeds/luci/applications/luci-app-ssr-plus
 rm -rf feeds/luci/applications/luci-app-ddns
 rm -rf feeds/luci/applications/luci-app-xlnetacc
 rm -rf feeds/luci/applications/luci-app-samba4
