@@ -58,17 +58,31 @@ function git_sparse_clone() {
 }
 
 # 添加额外插件
-git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
-# git clone --depth=1 -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
-# git clone --depth=1 https://github.com/ilxp/luci-app-ikoolproxy package/luci-app-ikoolproxy
+# Adguardhome
+git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/luci-app-adguardhome
+git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/adguardhome
+
+# Alist
+git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
+git clone --depth=1 https://github.com/sbwml/luci-app-alist package/alist
+
+# ddns-go
+git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/luci-app-ddns-go
+git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
+
+# filebrowser
+git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/luci-app-filebrowser
+git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/filebrowser
+
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
-git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/deng/luci-app-ddns-go
-svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser package/luci-app-filebrowser
+git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/luci-app-eqos
+
 # svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-ssr-mudb-server package/luci-app-ssr-mudb-server
 # svn export https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman package/luci-app-dockerman
-git_sparse_clone openwrt-18.06 https://github.com/immortalwrt/luci applications/luci-app-eqos
+# git clone --depth=1 -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush package/luci-app-serverchan
+# git clone --depth=1 https://github.com/ilxp/luci-app-ikoolproxy package/luci-app-ikoolproxy
 # svn export https://github.com/syb999/openwrt-19.07.1/trunk/package/network/services/msd_lite package/msd_lite
 
 # 科学上网插件
@@ -87,14 +101,13 @@ git clone --depth=1 https://github.com/xiaoqingfengATGH/luci-theme-infinityfreed
 # 更改 Argon 主题背景
 cp -f $GITHUB_WORKSPACE/images/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
-
 # SmartDNS
 git clone --depth=1 -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
 git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
 
 # msd_lite
-# git clone --depth=1 https://github.com/ximiTech/luci-app-msd_lite package/luci-app-msd_lite
-# git clone --depth=1 https://github.com/ximiTech/msd_lite package/msd_lite
+git clone --depth=1 https://github.com/ximiTech/luci-app-msd_lite package/luci-app-msd_lite
+git clone --depth=1 https://github.com/ximiTech/msd_lite package/msd_lite
 
 # MosDNS
 # git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
@@ -102,9 +115,6 @@ git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
 rm -rf feeds/packages/net/v2ray-geodata
 git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone --depth=1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-
-# Alist
-git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
 
 # 在线用户
 git_sparse_clone main https://github.com/haiibo/packages luci-app-onliner
