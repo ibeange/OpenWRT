@@ -72,7 +72,7 @@ git_sparse_clone openwrt-18.06 https://github.com/immortalwrt/luci applications/
 # svn export https://github.com/syb999/openwrt-19.07.1/trunk/package/network/services/msd_lite package/msd_lite
 
 # 科学上网插件
-git clone --depth=1 -b main https://github.com/fw876/openwrt_helloworld package/luci-app-ssr-plus
+git clone --depth=1 -b main https://github.com/sbwml/openwrt_helloworld package/luci-app-ssr-plus
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
