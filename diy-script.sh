@@ -23,9 +23,6 @@ rm -rf feeds/packages/v2dat
 rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/package/luci-app-ssr-plus/mosdns
 
-rm -rf feeds/packages/net/{alist,adguardhome,mosdns,smartdns}
-rm -rf feeds/smpackage/luci-app-adguardhome
-rm -rf feeds/packages/net/msd_lite
 rm -rf feeds/packages/net/smartdns
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/themes/luci-theme-netgear
@@ -59,7 +56,7 @@ function git_sparse_clone() {
 
 # 添加额外插件
 # Adguardhome
-# git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-app-adguardhome
 # git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/adguardhome
 
 # Alist
@@ -77,7 +74,8 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
-git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/luci-app-eqos
+git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-app-eqosplus
+git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-app-poweroffdevice
 
 # svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-ssr-mudb-server package/luci-app-ssr-mudb-server
 # svn export https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman package/luci-app-dockerman
