@@ -69,8 +69,8 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/luci-ap
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
 
 # lucky
-git clone --depth 1 https://github.com/sirpdboy/luci-app-lucky package/luci-app-lucky
-git clone --depth 1 https://github.com/sirpdboy/luci-app-lucky package/lucky
+# git clone --depth 1 https://github.com/sirpdboy/luci-app-lucky package/luci-app-lucky
+# git clone --depth 1 https://github.com/sirpdboy/luci-app-lucky package/lucky
 
 git clone --depth 1 https://github.com/sirpdboy/luci-app-poweroffdevice package/luci-app-poweroffdevice
 
@@ -91,7 +91,7 @@ git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-ap
 # svn export https://github.com/syb999/openwrt-19.07.1/trunk/package/network/services/msd_lite package/msd_lite
 
 # 科学上网插件
-git clone --depth=1 -b v5 https://github.com/sbwml/openwrt_helloworld package/luci-app-ssr-plus
+# git clone --depth=1 -b v5 https://github.com/sbwml/openwrt_helloworld package/luci-app-ssr-plus
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
@@ -107,18 +107,18 @@ git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon packa
 cp -f $GITHUB_WORKSPACE/images/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 # SmartDNS
-git clone --depth=1 -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
-git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
+# git clone --depth=1 -b lede https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
+# git clone --depth=1 https://github.com/pymumu/openwrt-smartdns package/smartdns
 
 # msd_lite
 git clone --depth=1 https://github.com/ximiTech/luci-app-msd_lite package/luci-app-msd_lite
 git clone --depth=1 https://github.com/ximiTech/msd_lite package/msd_lite
 
 # MosDNS
-git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/luci-app-mosdns
-rm -rf feeds/packages/net/v2ray-geodata
-git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-git clone --depth=1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+# git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/luci-app-mosdns
+# rm -rf feeds/packages/net/v2ray-geodata
+# git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+# git clone --depth=1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 # 在线用户
 git_sparse_clone main https://github.com/haiibo/packages luci-app-onliner
@@ -148,6 +148,9 @@ find package/*/ -maxdepth 2 -path "*/Makefile" | xargs -i sed -i 's/PKG_SOURCE_U
 
 # 取消主题默认设置
 find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
+
+# 更改默认主题位argon
+sed -i '/uci commit luci/i\uci set luci.main.mediaurlbase="/luci-static/argon"' `find package -type f -path '*/default-settings/files/zzz-default-settings'`
 
 # 调整 V2ray服务器 到 VPN 菜单
 sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/controller/*.lua
