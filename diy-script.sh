@@ -17,18 +17,18 @@ sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 # sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
 # 移除要替换的包
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/packages/net/adguardhome
-rm -rf feeds/packages/utils/v2dat
-rm -rf feeds/packages/v2dat
-rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/package/luci-app-ssr-plus/mosdns
+# rm -rf feeds/packages/net/mosdns
+# rm -rf feeds/packages/net/adguardhome
+# rm -rf feeds/packages/utils/v2dat
+# rm -rf feeds/packages/v2dat
+# rm -rf feeds/luci/applications/luci-app-mosdns
+# rm -rf feeds/package/luci-app-ssr-plus/mosdns
 
 rm -rf feeds/packages/net/smartdns
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/themes/luci-theme-netgear
 rm -rf feeds/luci/applications/luci-app-dockerman
-rm -rf feeds/luci/applications/luci-app-mosdns
+# rm -rf feeds/luci/applications/luci-app-mosdns
 rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-unblockmusic
 rm -rf feeds/luci/applications/luci-app-adbyby-plus
@@ -57,8 +57,8 @@ function git_sparse_clone() {
 
 # 添加额外插件
 # Adguardhome
-git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-app-adguardhome
-git clone --depth=1 https://github.com/xuanranran/lede-package package/adguardhome
+# git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-app-adguardhome
+# git clone --depth=1 https://github.com/xuanranran/lede-package package/adguardhome
 
 # Alist
 git clone --depth=1 https://github.com/sbwml/luci-app-alist package/luci-app-alist
