@@ -68,6 +68,12 @@ git clone --depth=1 https://github.com/sbwml/luci-app-alist package/alist
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/luci-app-ddns-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
 
+# lucky
+git clone --depth 1 https://github.com/sirpdboy/luci-app-lucky package/luci-app-lucky
+git clone --depth 1 https://github.com/sirpdboy/luci-app-lucky package/lucky
+
+git_sparse_clone master https://github.com/sirpdboy/luci-app-poweroffdevice
+
 # filebrowser
 # git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/luci-app-filebrowser
 # git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/filebrowser
@@ -76,7 +82,7 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
 git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
 git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-app-eqosplus
-git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-app-poweroffdevice
+# git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-app-poweroffdevice
 
 # svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-ssr-mudb-server package/luci-app-ssr-mudb-server
 # svn export https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman package/luci-app-dockerman
