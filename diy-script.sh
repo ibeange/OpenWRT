@@ -72,7 +72,7 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-lucky package/luci-app-lucky
 git clone --depth 1 https://github.com/sirpdboy/luci-app-lucky package/lucky
 
-git_sparse_clone main https://github.com/sirpdboy/luci-app-poweroffdevice luci-app-poweroffdevice
+git clone --depth 1 https://github.com/sirpdboy/luci-app-poweroffdevice package/luci-app-poweroffdevice
 
 # filebrowser
 # git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/luci-app-filebrowser
