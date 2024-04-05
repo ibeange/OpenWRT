@@ -71,7 +71,7 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
 # git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/luci-app-filebrowser
 # git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/filebrowser
 
-git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
+# git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
 git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-app-eqosplus
