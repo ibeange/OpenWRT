@@ -72,7 +72,7 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
 git clone --depth 1 https://github.com/sirpdboy/luci-app-lucky package/luci-app-lucky
 git clone --depth 1 https://github.com/sirpdboy/luci-app-lucky package/lucky
 
-git_sparse_clone main https://github.com/sirpdboy/luci-app-poweroffdevice package/luci-app-poweroffdevice
+git_sparse_clone main https://github.com/sirpdboy/luci-app-poweroffdevice luci-app-poweroffdevice
 
 # filebrowser
 # git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/luci-app-filebrowser
@@ -91,7 +91,7 @@ git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-ap
 # svn export https://github.com/syb999/openwrt-19.07.1/trunk/package/network/services/msd_lite package/msd_lite
 
 # 科学上网插件
-git clone --depth=1 -b main https://github.com/sbwml/openwrt_helloworld package/luci-app-ssr-plus
+git clone --depth=1 -b v5 https://github.com/sbwml/openwrt_helloworld package/luci-app-ssr-plus
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
 # git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2 package/luci-app-passwall2
@@ -115,7 +115,7 @@ git clone --depth=1 https://github.com/ximiTech/luci-app-msd_lite package/luci-a
 git clone --depth=1 https://github.com/ximiTech/msd_lite package/msd_lite
 
 # MosDNS
-git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
+git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/luci-app-mosdns
 rm -rf feeds/packages/net/v2ray-geodata
 git clone --depth=1 https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone --depth=1 https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
