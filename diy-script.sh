@@ -81,7 +81,7 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-poweroffdevice package/
 # git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 git clone --depth=1 https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata
-git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-app-eqosplus
+# git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-app-eqosplus
 # git clone --depth=1 https://github.com/sirpdboy/sirpdboy-package package/luci-app-poweroffdevice
 
 # svn export https://github.com/Lienol/openwrt-package/trunk/luci-app-ssr-mudb-server package/luci-app-ssr-mudb-server
@@ -107,9 +107,12 @@ git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclas
 # 删除自定义源默认的 argon 主题
 rm -rf package/lean/luci-theme-argon
 # 拉取 argon 原作者的源码
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
+git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+
+git clone --depth=1 -b main https://github.com/gngpp/luci-theme-design.git package/luci-theme-design
+git clone --depth=1 -b master https://github.com/gngpp/luci-app-design-config.git package/luci-app-design-config
 # 替换默认主题为 luci-theme-argon
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-opentomcat/luci-theme-design/' feeds/luci/collections/luci/Makefile
 
 # 更改 Argon 主题背景
 cp -f $GITHUB_WORKSPACE/images/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
