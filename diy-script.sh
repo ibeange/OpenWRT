@@ -113,6 +113,7 @@ git clone --depth=1 -b main https://github.com/gngpp/luci-theme-design.git packa
 git clone --depth=1 -b master https://github.com/gngpp/luci-app-design-config.git package/luci-app-design-config
 # 替换默认主题为 luci-theme-argon
 sed -i 's/luci-theme-opentomcat/luci-theme-design/' feeds/luci/collections/luci/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-design/' feeds/luci/collections/luci/Makefile
 
 # 更改 Argon 主题背景
 cp -f $GITHUB_WORKSPACE/images/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
