@@ -74,6 +74,12 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go package/ddns-go
 
 git clone --depth 1 https://github.com/sirpdboy/luci-app-poweroffdevice package/luci-app-poweroffdevice
 
+# 替换uugamebooster
+pushd $GITHUB_WORKSPACE/uugamebooster
+/bin/bash ./update_makefile.sh
+popd
+cp -f $GITHUB_WORKSPACE/uugamebooster/Makefile feeds/packages/net/uugamebooster/Makefile
+
 # filebrowser
 # git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/luci-app-filebrowser
 # git clone --depth=1 https://github.com/kenzok8/openwrt-packages package/filebrowser
