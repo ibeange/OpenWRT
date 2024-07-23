@@ -108,13 +108,14 @@ jobs:
         ccache: false
         mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
+        
+    - name: Update Golang
 
     - name: Update feeds
       run: |
         cd $OPENWRT_PATH
         ./scripts/feeds clean
         ./scripts/feeds update -a
-        ./scripts/feeds install -a
         
     - name: Load Custom Configuration
       run: |
@@ -126,6 +127,11 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_SCRIPT
         $GITHUB_WORKSPACE/scripts/preset-clash-core.sh $CLASH_KERNEL
         $GITHUB_WORKSPACE/scripts/preset-terminal-tools.sh
+        
+    - name: Install feeds
+      run: |
+        cd $OPENWRT_PATH
+        ./scripts/feeds install -a
 
     - name: Download DL Package
       run: |
