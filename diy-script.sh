@@ -16,6 +16,10 @@ sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 # TTYD 自动登录
 # sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
+#升级Golang
+rm -rf feeds/packages/lang/golang
+svn export https://github.com/sbwml/packages_lang_golang/branches/22.x feeds/packages/lang/golang
+
 # 移除要替换的包
 # rm -rf feeds/packages/net/mosdns
 # rm -rf feeds/packages/net/adguardhome
