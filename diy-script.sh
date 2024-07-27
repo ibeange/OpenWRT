@@ -45,12 +45,6 @@ rm -rf package/lean/automount
 rm -rf package/lean/autosamba
 # rm -rf feeds/luci/applications/luci-app-serverchan
 
-# Add Lienol's Packages
-git clone --depth=1 https://github.com/Lienol/openwrt-package
-rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
-rm -rf openwrt-package/verysync
-rm -rf openwrt-package/luci-app-verysync
-
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
   branch="$1" repourl="$2" && shift 2
