@@ -16,9 +16,10 @@ sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 # TTYD 自动登录
 # sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
-#升级Golang
-rm -rf feeds/packages/lang/golang
-svn export https://github.com/sbwml/packages_lang_golang/branches/22.x feeds/packages/lang/golang
+# Clone community packages to package/community
+
+mkdir package/community
+pushd package/community
 
 # 移除要替换的包
 # rm -rf feeds/packages/net/mosdns
@@ -48,6 +49,12 @@ rm -rf package/lean/UnblockNeteaseMusicGo
 rm -rf package/lean/automount
 rm -rf package/lean/autosamba
 # rm -rf feeds/luci/applications/luci-app-serverchan
+
+# Add Lienol's Packages
+git clone --depth=1 https://github.com/Lienol/openwrt-package
+rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
+rm -rf openwrt-package/verysync
+rm -rf openwrt-package/luci-app-verysync
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
@@ -176,6 +183,12 @@ find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/
 sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/controller/*.lua
 sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
 sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
+
+rm -rf nas-packages-luci/luci/luci-app-istorex
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+rm -rf package/feeds/packages/libmbim
+rm -rf package/feeds/packages/lame
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
