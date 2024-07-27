@@ -110,7 +110,6 @@ jobs:
         prefix: ${{ env.OPENWRT_PATH }}
 
     - name: Update feeds
-      id:update
       run: |
         cd $OPENWRT_PATH
         ./scripts/feeds clean
