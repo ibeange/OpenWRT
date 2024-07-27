@@ -16,11 +16,6 @@ sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 # TTYD 自动登录
 # sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
-# Clone community packages to package/community
-
-mkdir package/community
-pushd package/community
-
 # 移除要替换的包
 # rm -rf feeds/packages/net/mosdns
 # rm -rf feeds/packages/net/adguardhome
