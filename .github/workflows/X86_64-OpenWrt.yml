@@ -51,10 +51,10 @@ jobs:
       run: |
         docker rmi `docker images -q`
         sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d /usr/local/lib/android
-        sudo -E apt -y purge azure-cli* docker* ghc* zulu* llvm* firefox google* dotnet* powershell* openjdk* mysql* php* mongodb* dotnet* snap* aspnetcore*
+        sudo -E apt-get -y purge azure-cli* docker* ghc* zulu* llvm* firefox google* dotnet* powershell* openjdk* mysql* php* mongodb* dotnet* snap* aspnetcore* || true
         [ -n "$AGENT_TOOLSDIRECTORY" ] && sudo rm -rf "$AGENT_TOOLSDIRECTORY"
-        sudo -E apt update
-        sudo -E apt -y install $(curl -fsSL https://is.gd/depends_ubuntu_2204)
+        sudo -E apt-get update
+        sudo -E apt-get -y install rename $(curl -fsSL is.gd/depends_ubuntu_2204)
         sudo -E apt -y autoremove --purge
         sudo -E systemctl daemon-reload
         sudo -E apt clean
@@ -75,9 +75,11 @@ jobs:
       uses: actions/checkout@main
 
     - name: Clone Source Code
+      id: clone
       run: |
         df -hT $GITHUB_WORKSPACE
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        git clone --depth=1 $REPO_URL -b $REPO_BRANCH openwrt
+        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         cd openwrt
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
         COMMIT_AUTHOR=$(git show -s --date=short --format="作者: %an")
@@ -152,7 +154,7 @@ jobs:
         echo "FILE_DATE=$(date +"%Y.%m.%d")" >> $GITHUB_ENV
 
     - name: Check Space Usage
-      if: (!cancelled())
+      if: always()
       run: df -hT
 
     - name: Upload Bin Directory
@@ -163,6 +165,7 @@ jobs:
         path: ${{ env.OPENWRT_PATH }}/bin
 
     - name: Organize Files
+      id: organize
       if: steps.compile.outputs.status == 'success'
       run: |
         cd $OPENWRT_PATH/bin/targets/*/*
