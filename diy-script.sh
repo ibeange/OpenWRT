@@ -114,7 +114,7 @@ git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclas
 # 删除自定义源默认的 argon 主题
 rm -rf package/lean/luci-theme-argon
 # 拉取 argon 原作者的源码
-git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+git clone --depth=1 -b https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 
 git clone --depth=1 -b main https://github.com/gngpp/luci-theme-design.git package/luci-theme-design
 git clone --depth=1 -b master https://github.com/gngpp/luci-app-design-config.git package/luci-app-design-config
