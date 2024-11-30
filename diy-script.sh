@@ -175,10 +175,6 @@ sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/m
 sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
 
 rm -rf nas-packages-luci/luci/luci-app-istorex
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-rm -rf package/feeds/packages/libmbim
-rm -rf package/feeds/packages/lame
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
